@@ -1,0 +1,26 @@
+		Method 						     	|  	 				 Purpose
+showOpenDialog(Component parent) 			| Opens a dialog to select a file or directory to open. Returns an integer indicating the user's choice.
+showSaveDialog(Component parent) 			| Opens a dialog to choose where and under what name to save a file. Returns an integer indicating the user's choice.
+setFileSelectionMode(int mode)   			| Sets the file selection mode: FILES_ONLY, DIRECTORIES_ONLY, or FILES_AND_DIRECTORIES.
+setFileFilter(FileFilter filter)			| Sets the current file filter to restrict the types of files displayed.
+setSelectedFile(File file)       			| Sets the default file name in the Save dialog.
+getSelectedFile()                			| Returns the file or directory selected by the user.
+setMultiSelectionEnabled(boolean b)			| Enables or disables multiple file selection.
+isMultiSelectionEnabled() 					| Returns true if multiple file selection is enabled.
+setFileHidingEnabled(boolean b) 			| Enables or disables hiding of hidden files.
+isFileHidingEnabled() 						| Returns true if hidden files are not shown.
+setAcceptAllFileFilterUsed(boolean b) 		| Determines whether the "All Files" filter is used.
+isAcceptAllFileFilterUsed() 		  		| Returns true if the "All Files" filter is used.
+addChoosableFileFilter(FileFilter filter) 	|Adds a filter to the list of user choosable file filters.
+removeChoosableFileFilter(FileFilter filter)|Removes a filter from the list of user choosable file filters.
+resetChoosableFileFilters() 				| Resets the choosable file filter list to its starting state.
+setDialogTitle(String title) 				| Sets the title of the dialog window.
+getDialogTitle()							| Returns the title of the dialog window.
+setApproveButtonText(String text) 			| Sets the text of the approve button (e.g., "Open" or "Save").
+getApproveButtonText() 						| Returns the text of the approve button.
+setApproveButtonToolTipText(String text)	| Sets the tooltip text for the approve button.
+getApproveButtonToolTipText() 				| Returns the tooltip text for the approve button.
+setApproveButtonMnemonic(int mnemonic) 		| Sets the mnemonic (keyboard shortcut) for the approve button.
+getApproveButtonMnemonic() 					| Returns the mnemonic for the approve button.
+setFileSystemView(FileSystemView fsv) 		| Sets the file system view used by the file chooser.
+getFileSystemView() 						| Returns the file system view used by the file chooser.

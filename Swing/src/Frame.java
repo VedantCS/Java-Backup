@@ -4,7 +4,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 public  class Frame extends JFrame {
 	
-		
+//REMEMBER THIS IMP NOTE: You cannot have executable statements like frame.setSize(...) ,.setTitle(),.setVisible() directly in the class body
+//(outside of a method or constructor).
+//The code inside the class must be in a method, constructor, or initializer block.
 	Frame(){
 	//***********JFrame frame=new JFrame("Shop"); *****it creates a frame and name it as shop or use .setTitle() method later. HOWEVER..
 	//NO need here because you're already extending JFrame in your Frame class
@@ -20,8 +22,12 @@ public  class Frame extends JFrame {
 	this.setLocationRelativeTo(null); // this method display the JFrame to center position of a screen
 	this.setVisible(true);
 	this.getContentPane().setBackground(new Color(60,15,100));//import java.awt.Color and these three are the R G B values
+//yaha pe bas setBackground() se kaam nahi chalega kyuki yaha pe content pane hona
+	// A content pane in Swing is the area within a top-level container (like JFrame) where components are added. 
 	ImageIcon img=new ImageIcon("newlogo.png");//used to set images
 	this.setIconImage(img.getImage());
+//ImageIcon is not a component—it's actually a class that implements the Icon interface.I.E Why we use.setIconImage() not add() 
+	//beacuse add is used to add components not a class
 	
 	 
 	

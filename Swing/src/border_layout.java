@@ -56,7 +56,7 @@ public static void main(String[] args) {
     panel10.setBackground(Color.white);
 
     panel5.setLayout(new BorderLayout());
-
+//panel5.setLayout(new BorderLayout()) establishes how child components (panels 6-10) are organized within the CENTER panel.
     panel6.setPreferredSize(new Dimension(50,50));
     panel7.setPreferredSize(new Dimension(50,50));
     panel8.setPreferredSize(new Dimension (50,50));

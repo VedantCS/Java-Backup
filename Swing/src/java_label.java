@@ -28,11 +28,12 @@ public static void main(String[] args) {//new Frame(); uncomment it for using fr
      label.setOpaque(true);//THIS Displays background color so this must be set to true
      //If true the component paints every pixel within its bounds.Otherwise, the component may not paint some or all of its
 	//---------------------Borders---------------------
-     label.setBorder(border); //now you can see that the borders indicate that the  label takes up pretty much all of the space this is because of the default layout manager
+     label.setBorder(border); //now you can see that the borders indicate that the  label takes up pretty much all of the space this is 
+ //because of the default layout manager
      
      
    // -------moving text and image within the label, (by default it likes to be in the center and to the left)
-     label.setVerticalAlignment(JLabel.CENTER);//Sets vertical position of contents(icon+text) **within** label area i.e its width and height
+     label.setVerticalAlignment(JLabel.TOP);//Sets vertical position of contents(icon+text) **within** label area i.e its width and height
  //(JLabel.CENTER) because we need to align the text inside the JLabel else use SwingConstants.LEFT etc etc
      
  //
@@ -40,7 +41,7 @@ public static void main(String[] args) {//new Frame(); uncomment it for using fr
      
    //-----------------------------------as you can see label is moving as we resize the window so to restrict that use setBounds() method
      //it sets x,y positions within the frame and also the dimenesion
-     label.setBounds(10,420, 250, 230);//x,y,width,height x=0,y=0 is the top left of window btw 
+     label.setBounds(10,420, 550, 230);//x,y,width,height x=0,y=0 is the top left of window btw 
  //defines the position and size of the entire JLabel(component) inside its container (i.e frame here)
    
      

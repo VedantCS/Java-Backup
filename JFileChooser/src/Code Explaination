@@ -1,0 +1,112 @@
+Overview:
+
+This Java Swing program demonstrates how to use JFileChooser to:
+
+    Open and select a file (with filtering for .txt and .pdf)
+
+    Select a directory
+
+    Save a file (with default file name)
+
+All this happens via dialog windows, not a visible GUI window.
+✅ Code Breakdown with Explanation
+🔹 1. Create a basic invisible JFrame
+
+JFrame frame = new JFrame();
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    A JFrame is created only to act as the parent window for the dialogs.
+
+    It's invisible (no layout, size, or visibility set).
+
+    Used for proper centering and dialog behavior.
+
+🔹 2. Open File Section
+
+JFileChooser fileChooser = new JFileChooser();
+FileNameExtensionFilter filter = new FileNameExtensionFilter("Text & PDF Files", "txt", "pdf");
+fileChooser.setFileFilter(filter);
+int openResult = fileChooser.showOpenDialog(frame);
+
+    fileChooser is a dialog to pick files from the system.
+
+    A filter is added to only allow .txt and .pdf files.
+
+    showOpenDialog(frame) opens a dialog and blocks until the user acts.
+
+    It returns an int indicating what the user clicked:
+
+        APPROVE_OPTION = user clicked Open
+
+        CANCEL_OPTION = user clicked Cancel
+
+if (openResult == JFileChooser.APPROVE_OPTION) {
+    File selectedFile = fileChooser.getSelectedFile();
+    System.out.println("Opened file: " + selectedFile.getAbsolutePath());
+}
+
+    If user approved, we use getSelectedFile() to fetch the chosen file.
+
+    Then it prints the absolute path.
+
+🔹 3. Directory Selection Section
+
+JFileChooser dirChooser = new JFileChooser();
+dirChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+int dirResult = dirChooser.showOpenDialog(frame);
+
+    Creates a second JFileChooser to select directories.
+
+    setFileSelectionMode(DIRECTORIES_ONLY) limits selection to folders.
+
+    Again, showOpenDialog() is used, but this time for folder selection.
+
+if (dirResult == JFileChooser.APPROVE_OPTION) {
+    File selectedDir = dirChooser.getSelectedFile();
+    System.out.println("Selected directory: " + selectedDir.getAbsolutePath());
+}
+
+    If the user confirms, print the selected folder path.
+
+🔹 4. Save File Section
+
+JFileChooser saveChooser = new JFileChooser();
+saveChooser.setSelectedFile(new File("default_filename.txt"));
+int saveResult = saveChooser.showSaveDialog(frame);
+
+    A third JFileChooser is created for saving files.
+
+    setSelectedFile() sets the default filename shown in the dialog.
+
+    showSaveDialog() opens a "Save As" dialog.
+
+if (saveResult == JFileChooser.APPROVE_OPTION) {
+    File saveFile = saveChooser.getSelectedFile();
+    System.out.println("File to save: " + saveFile.getAbsolutePath());
+
+    if (saveFile.exists()) {
+        System.out.println("Warning: File already exists and might be overwritten.");
+    }
+}
+
+    If the user clicks Save, we get the chosen file path.
+
+    Then we check if a file with that name already exists and print a warning.
+
+🔹 5. Clean up the JFrame
+
+frame.dispose();
+
+    This line closes and releases the invisible JFrame window we created earlier.
+
+✅ At Runtime:
+
+Here’s what happens when you run this program:
+
+    A file open dialog appears allowing you to pick a .txt or .pdf.
+
+    After that, a dialog appears to let you pick a directory.
+
+    Then, a save dialog shows up with default_filename.txt filled in.
+
+    Console output shows the selected file/directory paths.

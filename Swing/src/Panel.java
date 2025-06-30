@@ -14,6 +14,7 @@ public static void main(String[] args) {
 	redpanel.setBackground(Color.RED);
 	redpanel.setBounds(0, 0, 250, 250);
 	redpanel.setLayout(new BorderLayout());///no use here in this code
+	//JPanel uses FlowLayout by default, which stacks components horizontally 
 	
 	JPanel bluepanel=new JPanel();
 	bluepanel.setBackground(Color.BLUE);
